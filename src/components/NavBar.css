@@ -1,0 +1,16 @@
+nav { 
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+nav p {
+	margin: 10px;
+	cursor: pointer;
+}
+
+/* Listado de categorias */
+nav > div {
+	display: flex;	
+}
