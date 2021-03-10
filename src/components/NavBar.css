@@ -14,3 +14,8 @@ nav p {
 nav > div {
 	display: flex;	
 }
+
+#carrito {
+	border-radius: 5px;
+	background-color: #fff2;
+}

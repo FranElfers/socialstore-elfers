@@ -1,16 +1,14 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
 import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <header className="App-header">
-        <div className="title">
-          <h1>SocialStore app</h1>
-          <p>Hecho con React por Francisco Elfers</p>
-        </div>
+        <ItemListContainer greeting="SocialStore app" />
       </header>
     </div>
   );
