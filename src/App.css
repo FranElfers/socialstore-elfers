@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 60vh;
 }
 
@@ -22,4 +23,34 @@
   padding: 0 20px;
   border: 1px solid #61dafb;
   border-radius: 20px;
+}
+
+#counter {
+  width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#counter div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#counter button {
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+
+#counter > button {
+  width: 100%;
+  background: #fff2;
+}
+
+#counter button:hover {
+  border: 2px solid #666;
 }

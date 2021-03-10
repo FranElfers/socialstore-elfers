@@ -5,8 +5,9 @@ nav {
 	width: 100%;
 }
 
-nav p {
+nav a {
 	margin: 10px;
+	text-decoration: none;
 	cursor: pointer;
 }
 

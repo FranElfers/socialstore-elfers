@@ -3,14 +3,14 @@ import './NavBar.css';
 
 export default function NavBar() {
 	return <nav>
-		<p className="brand">SocialStore</p>
+		<a className="brand">SocialStore</a>
 		<div>
 			<CartWidget />
-			<p title='Comidas' onClick={()=>alert('Comidas')}>🍔</p>
-			<p title='Bebidas' onClick={()=>alert('Bebidas')}>🍾</p>
-			<p title='Ropa' onClick={()=>alert('Ropa')}>👔</p>
-			<p title='Bicicletas' onClick={()=>alert('Bicicletas')}>🚲</p>
-			<p title='Musica' onClick={()=>alert('Musica')}>🎸</p>
+			<a title='Comidas' href="#">🍔</a>
+			<a title='Bebidas' href="#">🍾</a>
+			<a title='Ropa' href="#">👔</a>
+			<a title='Bicicletas' href="#">🚲</a>
+			<a title='Musica' href="#">🎸</a>
 		</div>
 	</nav>
 }
