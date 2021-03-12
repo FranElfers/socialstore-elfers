@@ -1,22 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function ItemCount({stock,initial,onAdd}) {
+export default function ItemCount({ stock, initial, onAdd}) {
 	const [ counter, setCounter ] = useState(initial);
 
 	const contar = val => {
-		if (stock > counter && val) {
-			setCounter(counter + 1)
-		} else if (counter > 0 && !val) {
-			setCounter(counter - 1)
+		if ((stock >= val) && (val >= 0)) {
+			setCounter(val)
 		}
 	}
 
 	return <div id="counter">
 		<div>
-			<button onClick={() => contar(false)}>-</button>
+			<button onClick={() => contar(counter - 1)}>-</button>
 			<span>{counter}</span>
-			<button onClick={() => contar(true)}>+</button>
+			<button onClick={() => contar(counter + 1)}>+</button>
 		</div>
-		<button onClick={() => onAdd(counter)}>Agregar</button>
+		<button onClick={() => onAdd(counter+' agregados')}>Agregar</button>
 	</div>
 }

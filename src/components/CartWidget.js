@@ -1,5 +1,5 @@
 export default function CartWidget() {
-	return <a title='Carrito' id='carrito'>🛒</a>
+	return <a title='Carrito' id='carrito' href="#">🛒</a>
 }
 
 // Este componente lo unico que tiene que tener es un icono

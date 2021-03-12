@@ -3,7 +3,7 @@ import './NavBar.css';
 
 export default function NavBar() {
 	return <nav>
-		<a className="brand">SocialStore</a>
+		<a className="brand" href="#">SocialStore</a>
 		<div>
 			<CartWidget />
 			<a title='Comidas' href="#">🍔</a>

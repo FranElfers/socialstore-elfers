@@ -19,10 +19,18 @@
   color: #61dafb;
 }
 
+a {
+  color: inherit
+}
+
 .title {
   padding: 0 20px;
   border: 1px solid #61dafb;
   border-radius: 20px;
+}
+
+.title h1 {
+  font-weight: 300;
 }
 
 #counter {
