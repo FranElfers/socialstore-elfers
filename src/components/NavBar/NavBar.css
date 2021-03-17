@@ -3,6 +3,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+	background: #282c34;
 }
 
 nav a {

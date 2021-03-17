@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function ItemCount({ stock, initial, onAdd}) {
 	const [ counter, setCounter ] = useState(initial);
@@ -9,7 +9,7 @@ export default function ItemCount({ stock, initial, onAdd}) {
 		}
 	}
 
-	return <div id="counter">
+	return <div className="counter">
 		<div>
 			<button onClick={() => contar(counter - 1)}>-</button>
 			<span>{counter}</span>

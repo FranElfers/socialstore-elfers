@@ -13,6 +13,9 @@
   justify-content: center;
   flex-direction: column;
   min-height: 60vh;
+
+  /* contrarrestar el nav */
+  padding-top: 70px
 }
 
 .App-link {
@@ -23,29 +26,60 @@ a {
   color: inherit
 }
 
-.title {
-  padding: 0 20px;
+.item-list-container,
+.item,
+.item div:first-child {
+  display: flex;
+}
+
+.item-list-container {
+  flex-direction: column;
+  /* padding: 0 20px; */
   border: 1px solid #61dafb;
   border-radius: 20px;
 }
 
-.title h1 {
-  font-weight: 300;
+.item {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 15px;
+  /* background: #fff2; */
 }
 
-#counter {
+.item div:first-child {
+  gap: 10px;
+  width: 100%;
+}
+
+.item img {
+  max-width: 60px;
+  font-size: 10px;
+}
+
+.item p {
+  margin: 0;
+  font-size: .9em;
+  text-align: left;
+}
+
+.item span {
+  white-space: nowrap;
+  color: #f90;
+}
+
+.counter {
+  align-self: flex-end;
   width: 100px;
-  padding: 5px;
   border-radius: 5px;
   color: #fff;
 }
 
-#counter div {
+.counter div {
   display: flex;
   justify-content: space-between;
 }
 
-#counter button {
+.counter button {
   padding: 10px;
   border: 2px solid transparent;
   border-radius: 3px;
@@ -54,11 +88,11 @@ a {
   cursor: pointer;
 }
 
-#counter > button {
+.counter > button {
   width: 100%;
   background: #fff2;
 }
 
-#counter button:hover {
+.counter button:hover {
   border: 2px solid #666;
 }
