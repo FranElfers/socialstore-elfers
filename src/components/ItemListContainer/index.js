@@ -17,12 +17,19 @@ const task = new Promise((res, rej) => {
 export default function ItemListContainer({greeting}) {
 	const [ itemlist, setItemlist ] = useState([]);
 
-	useEffect(()=>{
-		task.then(res => setItemlist(res), err => setItemlist(err));
-		console.log(itemlist);
-	}, [itemlist])
+	useEffect(() => {
+		task.then(res => setItemlist(res));
+	}, [])
 
 	return <div className="item-list-container">
 		<ItemList items={itemlist} />
 	</div>
 }
+
+// Crea tu componente ItemDetail.js
+// ItemDetail.js, que debe mostrar la vista de detalle de un item incluyendo dsu descripcion, una foto y el precio
+/*
+function ItemDetail({item}) {
+	return (desarrolla la vista de etalle expandida del producto con su imagen, titulo, descripcion y precio)
+}
+*/
