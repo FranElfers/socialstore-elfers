@@ -14,7 +14,7 @@ const task = new Promise((res, rej) => {
 	setTimeout(() => res(items), 2000)
 });
 
-export default function ItemListContainer({greeting}) {
+export default function ItemListContainer() {
 	const [ itemlist, setItemlist ] = useState([]);
 
 	useEffect(() => {
