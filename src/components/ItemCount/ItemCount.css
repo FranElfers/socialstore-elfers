@@ -1,0 +1,29 @@
+.counter {
+  align-self: flex-end;
+  width: 100px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.counter div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter button {
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+
+.counter > button {
+  width: 100%;
+  background: #fff2;
+}
+
+.counter button:hover {
+  border: 2px solid #666;
+}

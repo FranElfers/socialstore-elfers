@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function CartWidget() {
-	return <a title='Carrito' id='carrito' href="#">🛒</a>
+	return <NavLink title='Carrito' id='carrito' to="/cart" activeClassName="current-nav">🛒</NavLink>
 }

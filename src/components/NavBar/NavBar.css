@@ -8,8 +8,19 @@ nav {
 
 nav a {
 	margin: 10px;
+	border: 2px solid transparent;
+	border-radius: 5px;
 	text-decoration: none;
 	cursor: pointer;
+	transition: border .2s;
+}
+
+nav a:hover {
+	border: 2px solid #666;
+}
+
+.current-nav {
+	border: 2px solid #61dafb;
 }
 
 /* Listado de categorias */
@@ -17,7 +28,7 @@ nav > div {
 	display: flex;	
 }
 
+
 #carrito {
-	border-radius: 5px;
 	background-color: #fff2;
 }

@@ -18,81 +18,11 @@
   padding-top: 70px
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 a {
+  text-decoration: none;
   color: inherit
 }
 
-.item-list-container,
-.item,
-.item div:first-child {
-  display: flex;
-}
-
-.item-list-container {
-  flex-direction: column;
-  /* padding: 0 20px; */
-  border: 1px solid #61dafb;
-  border-radius: 20px;
-}
-
-.item {
-  margin: 10px;
-  padding: 15px;
-  border-radius: 15px;
-  /* background: #fff2; */
-}
-
-.item div:first-child {
-  gap: 10px;
-  width: 100%;
-}
-
-.item img {
-  max-width: 60px;
-  font-size: 10px;
-}
-
-.item p {
-  margin: 0;
-  font-size: .9em;
-  text-align: left;
-}
-
-.item span {
-  white-space: nowrap;
-  color: #f90;
-}
-
-.counter {
-  align-self: flex-end;
-  width: 100px;
-  border-radius: 5px;
-  color: #fff;
-}
-
-.counter div {
-  display: flex;
-  justify-content: space-between;
-}
-
-.counter button {
-  padding: 10px;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  color: #fff;
-  background: transparent;
-  cursor: pointer;
-}
-
-.counter > button {
-  width: 100%;
-  background: #fff2;
-}
-
-.counter button:hover {
-  border: 2px solid #666;
+h1,h2,h3 {
+  font-weight: 400;
 }
