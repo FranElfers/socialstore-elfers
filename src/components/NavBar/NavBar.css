@@ -28,6 +28,9 @@ nav > div {
 	display: flex;	
 }
 
+nav > div a {
+	margin: 10px .3em;
+}
 
 #carrito {
 	background-color: #fff2;

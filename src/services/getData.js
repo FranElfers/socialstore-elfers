@@ -48,19 +48,19 @@ export function getAllProducts() {
 
 // Retorna objeto 'category'
 export function getCategory(name) {
-	return getDelayed(categories.find(e => e.name == name))
+	return getDelayed(categories.find(e => e.name === name))
 	.then(res => {
 		if (res) return res
-		throw new Error('No items results')
+		throw new Error(`No '${name}' category.`)
 	})
 }
 
 // Retorna objeto 'product'
 export function getProductById(id) {
-	return getDelayed(allProducts().find(e => e.id == id))
+	return getDelayed(allProducts().find(e => e.id === id))
 	.then(res => {
 		if (res) return res
-		throw new Error('No item results by id=' + id)
+		throw new Error(`No '${id}' item results.`)
 	})
 }
 

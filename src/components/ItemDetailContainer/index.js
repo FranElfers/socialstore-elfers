@@ -8,8 +8,8 @@ export default function ItemDetailContainer() {
 	const { id } = useParams();
 	
 	useEffect(() => {
-		getProductById(id).then(res => setItem(res))
-	},[])
+		getProductById(parseInt(id)).then(res => setItem(res))
+	},[id])
 
 	return <ItemDetail {...item} />
 }

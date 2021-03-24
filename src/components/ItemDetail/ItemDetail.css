@@ -1,3 +1,8 @@
+.item-detail {
+	width: 500px;
+  max-width: 95%;
+}
+
 .item-detail img {
 	max-width: 250px;
 }
