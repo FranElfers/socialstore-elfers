@@ -1,17 +1,27 @@
+import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import getCategories from '../../services/getData';
 import CartWidget from '../CartWidget';
 import './NavBar.css';
 
 export default function NavBar() {
+	const [ categories, setCategories ] = useState([])
+	useEffect(() => {
+		getCategories().then(res => setCategories(res))
+	},[categories])
 	return <nav>
 		<Link className="brand" to="/">SocialStore</Link>
 		<div>
 			<CartWidget />
-			<NavLink activeClassName="current-nav" title='Comidas' to="/category/Hamburguesas" >🍔</NavLink>
-			<NavLink activeClassName="current-nav" title='Bebidas' to="/category/Bebidas" >🍾</NavLink>
-			<NavLink title='Ropa' to="/" >👔</NavLink>
-			<NavLink title='Bicicletas' to="/" >🚲</NavLink>
-			<NavLink title='Musica' to="/" >🎸</NavLink>
+			{categories.map(cat => <>
+				<NavLink 
+					activeClassName="current-nav" 
+					title={cat.name} 
+					to={"/category/" + cat.name} 
+				>{cat.icon}</NavLink>
+			</>)}
+			<NavLink title='Bicicletas' to="/bicicletas" >🚲</NavLink>
+			<NavLink title='Musica' to="/musica" >🎸</NavLink>
 		</div>
 	</nav>
 }

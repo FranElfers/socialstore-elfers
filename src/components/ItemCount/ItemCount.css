@@ -21,7 +21,8 @@
 
 .counter > button {
   width: 100%;
-  background: #fff2;
+  font-family: Consolas;
+  /* background: #fff2; */
 }
 
 .counter button:hover {

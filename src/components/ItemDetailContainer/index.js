@@ -8,7 +8,6 @@ export default function ItemDetailContainer() {
 	const { id } = useParams();
 	
 	useEffect(() => {
-		console.log({id});
 		getProductById(id).then(res => setItem(res))
 	},[])
 

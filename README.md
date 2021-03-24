@@ -1,9 +1,9 @@
-# SocialStore con React
+# SocialStore: Tu tienda online!
+¿Comenzaste o tenés un emprendimiento y te hace falta una tienda online? Con `SocialStore` podrás tener tus productos en línea de forma rápida, fácil y sin comisiones.
+
+## Hecho con React
 Este es el proyecto del curso de ReactJS de CoderHouse
 Hecho por **Francisco Elfers**.
-
-## About 
-Aplicación E-Commerce de cualquier categoria
 
 ## Versiones de cada desafío
 * [Desafío 1 "Crear la App utilizando el CLI"](https://github.com/FranElfers/socialstore-elfers/tree/1f9ca9a676099211d48a91449ebfe408cc980f28)

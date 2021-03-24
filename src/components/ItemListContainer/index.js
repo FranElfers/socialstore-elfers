@@ -1,23 +1,39 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import getCategories, { getProductsOfCategory } from "../../services/getData";
+import { useParams } from "react-router-dom";
+import getCategories, { getCategory } from "../../services/getData";
 import ItemList from "../ItemList";
 import './ItemListContainer.css'
 
 export default function ItemListContainer() {
-	const [ itemlist, setItemlist ] = useState([]);
-	const { id } = useParams();
+	const [ loading, setLoading ] = useState(false);
+	const [ categories, setCategories ] = useState([]);
+	const { name } = useParams();
 
 	useEffect(() => {
-		console.log(id);
-		if (id) {
-			getProductsOfCategory(id).then(res => setItemlist(res));
+		setLoading(true);
+		if (name) {
+			// Renderizar categoria por nombre
+			getCategory(name)
+				.then(res => {
+					setCategories([res])
+					setLoading(false);
+				})
 		} else {
-			getCategories('Hamburguesas').then(res => setItemlist(res));
+			// Renderizar todas las categorias
+			getCategories()
+				.then(res => {
+					setCategories(res)
+					setLoading(false);
+				});
 		}
-	}, [id])
+	}, [name])
 
-	return <div className="item-list-container">
-		<ItemList items={itemlist} />
-	</div>
+	if (loading) return <h1 className="loading">🕛</h1>
+
+	return categories.map(category => <>
+		<p>{category.icon} {category.name}</p>
+		<div key={category.name} className="item-list-container">
+			<ItemList items={category.items} />
+		</div>
+	</>)
 }
