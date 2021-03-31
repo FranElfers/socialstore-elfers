@@ -30,10 +30,13 @@ export default function ItemListContainer() {
 
 	if (loading) return <h1 className="loading">🕛</h1>
 
-	return categories.map(category => <>
+	const categoriesList = categories.map(category => 
+	<div key={category.name} className="category flx-clmn-ctr">
 		<p>{category.icon} {category.name}</p>
-		<div key={category.name} className="item-list-container">
+		<div className="item-list-container">
 			<ItemList items={category.items} />
 		</div>
-	</>)
+	</div>)
+
+	return <div className="categories">{categoriesList}</div>
 }

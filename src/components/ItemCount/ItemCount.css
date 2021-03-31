@@ -10,10 +10,11 @@
   justify-content: space-between;
 }
 
+.counter span {
+  line-height: 2.4
+}
+
 .counter button {
-  padding: 10px;
-  border: 2px solid transparent;
-  border-radius: 3px;
   color: #fff;
   background: transparent;
   cursor: pointer;
@@ -23,8 +24,4 @@
   width: 100%;
   font-family: Consolas;
   /* background: #fff2; */
-}
-
-.counter button:hover {
-  border: 2px solid #666;
 }

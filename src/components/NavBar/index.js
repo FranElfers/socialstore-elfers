@@ -13,16 +13,14 @@ export default function NavBar() {
 	return <nav>
 		<Link className="brand" to="/">SocialStore</Link>
 		<div>
-			<CartWidget />
 			{categories.map(cat => <NavLink 
-					key={cat.name}
-					activeClassName="current-nav" 
-					title={cat.name} 
-					to={"/category/" + cat.name} 
+				key={cat.name}
+				activeClassName="current-nav" 
+				title={cat.name} 
+				to={"/category/" + cat.name} 
 				>{cat.icon}</NavLink>
 			)}
-			<NavLink title='Bicicletas' to="/bicicletas" >🚲</NavLink>
-			<NavLink title='Musica' to="/musica" >🎸</NavLink>
+			<CartWidget />
 		</div>
 	</nav>
 }

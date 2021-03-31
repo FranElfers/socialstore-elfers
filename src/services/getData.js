@@ -24,9 +24,17 @@ const categories = [
 		name: 'ropa',
 		icon: '👔',
 		items: [
-			{ id: 8, title:'Supreme Velour L/S Polo', description: 'Supreme Velour L/S Polo is a cotton blend velour longsleeve shirt with self collar and button placket. Top stitch details on the front panel', price: 50000.00, stock:1, pictureUrl:'https://www.svgrepo.com/show/95402/clothes.svg'},
+			{ id: 8, title:'Supreme Velour L/S Polo', description: 'Supreme Velour L/S Polo is a cotton blend velour longsleeve shirt with self collar and button placket. Top stitch details on the front panel', price: 50000.00, stock:2, pictureUrl:'https://www.svgrepo.com/show/95402/clothes.svg'},
 		]
 	},
+	{
+		name: 'relojes',
+		icon: '⌚',
+		items: [
+			{ id: 9, title:'Frédérique Constant', description: 'Vintage Healey Automatic limited-edition 40mm', price: 475000.00, stock:1, pictureUrl:'https://www.svgrepo.com/show/50150/watch.svg'},
+			{ id: 10, title:'Skmei 1270 S Shock', description: 'Reloj deportivo personalizado LED, aspecto increíble, apto para muchas ocasiones, diseño unisex.', price: 2000.00, stock:1, pictureUrl:'https://www.svgrepo.com/show/50150/watch.svg'},
+		]
+	}
 ]
 
 const allProducts = () => categories.reduce((acc,cat) => [...acc, ...cat.items], []);

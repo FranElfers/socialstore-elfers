@@ -1,4 +1,7 @@
 .item-detail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 500px;
   max-width: 95%;
 }
@@ -9,4 +12,8 @@
 
 .item-detail p {
 	font-size: .9em
+}
+
+.item-detail .counter {
+	align-self: auto
 }

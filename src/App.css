@@ -11,7 +11,7 @@
 .App-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   min-height: 60vh;
 
@@ -30,6 +30,31 @@ h1,h2,h3 {
 
 .loading {
   animation: load 1s infinite ease;
+}
+
+.flx-clmn-ctr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Button stuff */
+button, .btn1, .btn2 {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #61dafb;
+}
+
+button, .btn2 {
+  border: 2px solid transparent;
+}
+
+.btn1:hover {
+  background: #fff2;
+}
+
+button:hover, .btn2:hover {
+  border: 2px solid #666;
 }
 
 @keyframes load {
