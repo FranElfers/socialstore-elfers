@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount'
+import CartContext from '../../context/CartContext'
 import './ItemDetail.css'
 
-export default function ItemDetail({ title, description, price, pictureUrl, stock }) {
-	const [ selectedCount, setSelectedCount ] = useState(0)
+export default function ItemDetail(item) {
+	const [ selectedCount, setSelectedCount ] = React.useState(0)
+	const { addItem } = React.useContext(CartContext)
+	const { title, description, price, pictureUrl, stock } = item
 
-	const addHandler = i => {
-		setSelectedCount(i)
+	const addHandler = quantity => {
+		setSelectedCount(quantity)
 	}
 	
 	return <div className="item-detail">
@@ -17,7 +20,11 @@ export default function ItemDetail({ title, description, price, pictureUrl, stoc
 		<p>{description}</p>
 
 		{selectedCount > 0 ? 
-			<Link to="/cart" className="btn1">Agregar {selectedCount} al carrito</Link>
+			<Link 
+				to="/cart" 
+				className="btn1" 
+				onClick={() => addItem(item, selectedCount)}
+			>Agregar {selectedCount} al carrito</Link>
 			:
 			<ItemCount stock={stock} initial={0} onAdd={addHandler} />
 		}
