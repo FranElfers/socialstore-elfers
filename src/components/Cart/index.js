@@ -11,7 +11,7 @@ export default function Cart() {
 			{ cartSize > 0 ?
 				products.map((product,i) => <div key={i}>
 					<img src={product.item.pictureUrl} alt={product.item.title} />
-					<span>{product.item.title}</span>
+					<span><Link to={"/item/" + product.item.id}>{product.item.title}</Link></span>
 					<span>{product.quantity}</span>
 					<span>$ {product.item.price}</span>
 					<button onClick={() => removeProducts(product.item.id, 1)}>- 1</button>
