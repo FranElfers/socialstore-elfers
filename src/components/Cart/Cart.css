@@ -13,3 +13,7 @@
 .cart img {
 	width: 80px;	
 }
+
+.cart span {
+	font-size: .9em;
+}

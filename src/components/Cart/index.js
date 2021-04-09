@@ -11,10 +11,10 @@ export default function Cart() {
 			{ cartSize > 0 ?
 				products.map((product,i) => <div key={i}>
 					<img src={product.item.pictureUrl} alt={product.item.title} />
-					<h3>{product.item.title}</h3>
-					<h3>{product.quantity}</h3>
-					<h3>$ {product.item.price}</h3>
-					<button onClick={() => removeProducts(product.item.id, 1)}>Sacar uno</button>
+					<span>{product.item.title}</span>
+					<span>{product.quantity}</span>
+					<span>$ {product.item.price}</span>
+					<button onClick={() => removeProducts(product.item.id, 1)}>- 1</button>
 				</div> )
 			:
 				<Link to="/" >No hay productos, <u>volver a inicio</u></Link>
@@ -23,15 +23,15 @@ export default function Cart() {
 		{cartSize > 0 ? 
 			<div className="total">
 				<button onClick={() => clear()}>Borrar carrito</button>
-				<h3>
+				<span>
 					$ &nbsp;
 					{products.reduce((acc,cur) => (cur.item.price * cur.quantity) + acc, 0)}
-				</h3>
+				</span>
 			</div>
 		:
 			<div className="total">
 				<div></div>
-				<h3>$ 0</h3>
+				<span>$ 0</span>
 			</div>
 		}
 	</>
