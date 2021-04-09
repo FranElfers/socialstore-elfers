@@ -7,32 +7,49 @@ export const Provider = ({children}) => {
 	const [ products, setProducts ] = React.useState([])
 	// [{item, quantity},{item, quantity},{item, quantity}]
 
-	const isInCart = id => products.find(e => e.item.id === id) !== undefined;
+	const getProduct = id => products.find(e => e.item.id === id)
+
+	const isInCart = id => getProduct(id) !== undefined;
 	
 	const clear = () => { setProducts([]) };
 	
-	const cartSize = () => products.reduce((acc,cur) => acc + cur.quantity, 0)
+	const cartSize = products.length > 0 ? 
+		products.reduce((acc,cur) => acc + cur.quantity, 0) : 0;
 	
+	const removeProducts = (id,ammount) => {
+		// si la cantidad de el producto es mayor a 'ammount' (generalmente 1),
+		// le resta 'ammount' a esa cantidad
+		if (getProduct(id).quantity > ammount) {
+			setProducts(products.map(e => {
+				if (e.item.id === id) e.quantity -= ammount 
+				return e
+			}))
+		} 
+		
+		// si la cantidad del producto no llega a 'ammount', lo elimna entero
+		else {
+			removeItem(id)
+		}
+	}
+
 	const removeItem = id => {
 		setProducts(products.filter(e => e.item.id !== id))
 	}
 	
 	const addItem = (item, quantity) => {
+		// busca el producto en la lista y solo reemplaza el valor 'quantity'
 		if (isInCart(item.id)) {
-			// busca el producto en la lista y solo reemplaza el valor 'quantity'
 			setProducts(products.map(i => {
-				if (i.item.id === item.id) i.quantity = i.quantity + quantity
+				if (i.item.id === item.id) i.quantity += quantity
 				return i
 			}))
-		} else {
-			// agrega el producto nuevo
+		} 
+		
+		// agrega el producto nuevo
+		else {
 			setProducts([...products, {item, quantity}])
 		}
 	}
-
-	React.useEffect(() => {
-		console.log('cart',products)
-	},[products])
 
 	return <MyContext.Provider value={{
 		products, 
@@ -40,7 +57,8 @@ export const Provider = ({children}) => {
 		isInCart, 
 		removeItem,
 		clear,
-		cartSize
+		cartSize,
+		removeProducts
 	}}>
 		{children}
 	</MyContext.Provider>

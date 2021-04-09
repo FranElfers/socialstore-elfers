@@ -4,11 +4,11 @@ import CartContext from '../../context/CartContext'
 
 export default function CartWidget() {
 	const { cartSize } = React.useContext(CartContext)
-	
-	return <NavLink title='Carrito' id='carrito' to="/cart" activeClassName="current-nav">
+
+	return cartSize === 0 || <NavLink title='Carrito' id='carrito' to="/cart" activeClassName="current-nav">
 		🛒
 		<span style={{marginRight: 5}}>
-			{cartSize()}
+			{cartSize}
 		</span>
 	</NavLink>
 }

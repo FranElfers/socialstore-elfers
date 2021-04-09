@@ -1,0 +1,15 @@
+.cart div, .total {
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	width: 500px;
+	max-width: 95vw;
+}
+
+.cart div {
+	margin: 30px;
+}
+
+.cart img {
+	width: 80px;	
+}
