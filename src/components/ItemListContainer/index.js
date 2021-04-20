@@ -15,7 +15,7 @@ export default function ItemListContainer() {
 			// Renderizar categoria por nombre
 			getCategory(name)
 				.then(res => {
-					setCategories([res])
+					res.docs.map(doc => setCategories([{id:doc.id, ...doc.data()}]))
 					setLoading(false);
 				})
 		} else {
@@ -34,7 +34,7 @@ export default function ItemListContainer() {
 	<div key={category.name} className="category flx-clmn-ctr">
 		<p>{category.icon} {category.name}</p>
 		<div className="item-list-container">
-			<ItemList items={category.items} />
+			<ItemList categoryId={category.id} />
 		</div>
 	</div>)
 

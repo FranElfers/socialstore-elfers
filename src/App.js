@@ -36,3 +36,5 @@ function App() {
 }
 
 export default App;
+
+// En cart te recomiendo que para eliminar el item comprado podria mostrarse una " x " o podrias incluso un contador para agregar o restar. Saludos!

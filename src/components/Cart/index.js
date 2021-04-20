@@ -4,7 +4,7 @@ import CartContext from '../../context/CartContext'
 import './Cart.css'
 
 export default function Cart() {
-	const { products, removeProducts, cartSize, clear } = React.useContext(CartContext)
+	const { products, removeProducts, addItem, cartSize, clear } = React.useContext(CartContext)
 
 	return <>
 		<div className="cart">
@@ -14,7 +14,10 @@ export default function Cart() {
 					<span><Link to={"/item/" + product.item.id}>{product.item.title}</Link></span>
 					<span>{product.quantity}</span>
 					<span>$ {product.item.price}</span>
-					<button onClick={() => removeProducts(product.item.id, 1)}>- 1</button>
+					<div className="cartProductButtons">
+						<button onClick={() => removeProducts(product.item.id, 1)}>-</button>
+						<button onClick={() => addItem(product.item, 1)}>+</button>
+					</div>
 				</div> )
 			:
 				<Link to="/" >No hay productos, <u>volver a inicio</u></Link>
@@ -23,6 +26,7 @@ export default function Cart() {
 		{cartSize > 0 ? 
 			<div className="total">
 				<button onClick={() => clear()}>Borrar carrito</button>
+				{console.log(products)}
 				<span>
 					$ &nbsp;
 					{products.reduce((acc,cur) => (cur.item.price * cur.quantity) + acc, 0)}
