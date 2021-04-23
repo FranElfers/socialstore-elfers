@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import './ItemCount.css'
 
-export default function ItemCount({ stock, initial, onAdd}) {
+export default function ItemCount({ virtualStock, initial, onAdd}) {
 	const [ counter, setCounter ] = useState(initial);
 
 	const contar = val => {
-		if ((stock >= val) && (val >= 0)) {
+		if ((virtualStock >= val) && (val >= 0)) {
 			setCounter(val)
 		}
 	}

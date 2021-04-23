@@ -6,12 +6,18 @@ import './ItemDetail.css'
 
 export default function ItemDetail(item) {
 	const [ selectedCount, setSelectedCount ] = React.useState(0)
-	const { addItem } = React.useContext(CartContext)
-	const { title, description, price, pictureUrl, stock } = item
+	const { addItem, getProduct } = React.useContext(CartContext)
+	const { id, title, description, price, pictureUrl, stock } = item
 
 	const addHandler = quantity => {
 		setSelectedCount(quantity)
 	}
+
+	// Cantidad de items seleccionados en el carrito
+	const onCartQuantity = () => getProduct(id)?.quantity || 0
+
+	// Stock virtual 
+	const virtualStock = () => stock - onCartQuantity()
 	
 	return <div className="item-detail">
 		<img src={pictureUrl} alt={title}/>
@@ -26,7 +32,7 @@ export default function ItemDetail(item) {
 				onClick={() => addItem(item, selectedCount)}
 			>Agregar {selectedCount} al carrito</Link>
 			:
-			<ItemCount stock={stock} initial={0} onAdd={addHandler} />
+			<ItemCount virtualStock={virtualStock()} initial={0} onAdd={addHandler} />
 		}
 	</div>
 }

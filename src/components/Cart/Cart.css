@@ -22,11 +22,11 @@
 	font-size: .9em;
 }
 
-.cartProductButtons {
+.cart-product-buttons {
 	padding: 5px;
 }
 
-.cartProductButtons button {
+.cart-product-buttons button {
 	height: 20px;
 	width: 20px;
 	margin: 2px;
@@ -37,7 +37,7 @@
 	background: transparent;
 }
 
-.cartProductButtons button:hover {
+.cart-product-buttons button:hover {
 	border: 2px solid white;
 }
 
@@ -46,12 +46,18 @@
 	font-size: 1.2rem;
 	border: none;
 	color: white;
-	background-color: rgb(68,156,181);
-	box-shadow: inset 200px 0px 100px -60px rgb(68 70 181);
+	cursor: default;
+	background-color: rgb(124, 124, 124);
 	transition: box-shadow .2s ease;
 }
 
-.completar-compra:hover {
+.completar-compra.active {
+	cursor: pointer;
+	background-color: rgb(68,156,181);
+	box-shadow: inset 200px 0px 100px -60px rgb(68 70 181);
+}
+
+.completar-compra.active:hover {
 	box-shadow: inset 200px 0px 100px -60px transparent;
 }
 

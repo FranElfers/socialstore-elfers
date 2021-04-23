@@ -35,7 +35,7 @@ export default function Cart() {
 		// Agrega un nuevo documento de orden de compra con los productos
 		ordersCol.add(orden)
 		.then(({id}) => {orderId = id})
-		.catch(err => {console.log(err)})
+		.catch(err => {console.err(err)})
 		.finally(() => {console.log('termino')})
 
 
@@ -54,7 +54,7 @@ export default function Cart() {
 
 		// Sube la orden y redirige a una pantalla de resumen
 		batch.commit().then(() => {
-			history.push('success/' + orderId)
+			history.push('checkout/' + orderId)
 		})
 
 	}
@@ -65,7 +65,7 @@ export default function Cart() {
 		<span><Link to={"/item/" + product.item.id}>{product.item.title}</Link></span>
 		<span>{product.quantity}</span>
 		<span>$ {product.item.price}</span>
-		<div className="cartProductButtons">
+		<div className="cart-product-buttons">
 			<button onClick={() => removeProducts(product.item.id, 1)}>-</button>
 			<button onClick={() => addItem(product.item, 1)}>+</button>
 			<button onClick={() => removeProducts(product.item.id, product.quantity)}>&times;</button>
@@ -77,6 +77,7 @@ export default function Cart() {
 	const nameRef = React.useRef()
 	const phoneRef = React.useRef()
 	const emailRef = React.useRef()
+	const [ comprarButtonClass, setComprarButtonClass ] = React.useState('')
 	const checkUser = () => {
 		const data = {
 			name: nameRef.current.value,
@@ -87,6 +88,10 @@ export default function Cart() {
 
 		// Mi forma medio extraña para comprobar si los datos estan completos
 		return Object.values(data).filter(e => e === '').length === 0
+	}
+
+	const handleChange = () => {
+		setComprarButtonClass(checkUser() ? 'active' : '')
 	}
 	
 
@@ -103,24 +108,27 @@ export default function Cart() {
 			<form target="_self">
 				<div className="field">
 					<label htmlFor="name">Nombre</label>
-					<input type="text" id="name" ref={nameRef} />
+					<input type="text" id="name" ref={nameRef} onChange={handleChange} />
 				</div>
 				<div className="field">
 					<label htmlFor="phone">Numero</label>
-					<input type="tel" id="phone" ref={phoneRef} />
+					<input type="tel" id="phone" ref={phoneRef} onChange={handleChange} />
 				</div>
 				<div className="field">
 					<label htmlFor="email">E-mail</label>
-					<input type="email" id="email" ref={emailRef} />
+					<input type="email" id="email" ref={emailRef} onChange={handleChange} />
 				</div>
 			</form>
 		</div>
 		<div className="total">
-			<button className="completar-compra" onClick={generarOrden}>Completar compra</button>
+			<button 
+				className={"completar-compra "+comprarButtonClass} 
+				disabled={comprarButtonClass.length === 0}
+				onClick={generarOrden}
+			>Completar compra</button>
 		</div>
 	</>
 	
-	React.useEffect(() => {}, [])
 
 	// Render
 	return <>

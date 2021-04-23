@@ -6,7 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import { Provider } from './context/CartContext';
-import Success from './components/Success';
+import Checkout from './components/Checkout';
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
                 <Route path="/cart" >
                   <Cart />
                 </Route>
-                <Route path="/success/:id" >
-                  <Success />
+                <Route path="/checkout/:id" >
+                  <Checkout />
                 </Route>
                 <Route exact path="/">
                   <ItemListContainer />

@@ -17,7 +17,7 @@ export function getCategory(name) {
 // Retorna objeto 'product'
 export function getProductById(id) {
 	return collectSingleProduct(id).then(res => {
-		if (res) return res
+		if (res.exists) return res
 		throw new Error(`No '${id}' item results.`)
 	})
 }

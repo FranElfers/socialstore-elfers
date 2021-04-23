@@ -56,7 +56,8 @@ export const Provider = ({children}) => {
 	return <MyContext.Provider value={{
 		products, 
 		addItem, 
-		isInCart, 
+		isInCart,
+		getProduct, 
 		removeItem,
 		clear,
 		cartSize,
