@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import { Provider } from './context/CartContext';
+import Success from './components/Success';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
                 </Route>
                 <Route path="/cart" >
                   <Cart />
+                </Route>
+                <Route path="/success/:id" >
+                  <Success />
                 </Route>
                 <Route exact path="/">
                   <ItemListContainer />

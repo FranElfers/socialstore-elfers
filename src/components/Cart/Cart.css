@@ -6,6 +6,10 @@
 	max-width: 95vw;
 }
 
+.total {
+	margin: 10px 0;
+}
+
 .cart > div {
 	margin: 30px;
 }
@@ -35,4 +39,36 @@
 
 .cartProductButtons button:hover {
 	border: 2px solid white;
+}
+
+.completar-compra {
+	width: 100%;
+	font-size: 1.2rem;
+	border: none;
+	color: white;
+	background-color: rgb(68,156,181);
+	box-shadow: inset 200px 0px 100px -60px rgb(68 70 181);
+	transition: box-shadow .2s ease;
+}
+
+.completar-compra:hover {
+	box-shadow: inset 200px 0px 100px -60px transparent;
+}
+
+form {
+	width: 100%;
+}
+
+form .field {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	font-size: .9em;
+}
+
+form .field input {
+	background: transparent;
+	border-radius: 5px;
+	border: 1px solid lightgrey;
+	color: white;
 }

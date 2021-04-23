@@ -39,8 +39,8 @@ export const Provider = ({children}) => {
 	const addItem = (item, quantity) => {
 		// busca el producto en la lista y solo reemplaza el valor 'quantity'
 		if (isInCart(item.id)) {
-			console.log(isInCart(item.id));
 			setProducts(products.map(i => {
+				// Agrega solo si hay stock disponible
 				const stockControl = i.item.stock - i.quantity - quantity >= 0
 				if (i.item.id === item.id && stockControl) i.quantity += quantity
 				return i

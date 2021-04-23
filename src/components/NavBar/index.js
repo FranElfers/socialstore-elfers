@@ -8,7 +8,7 @@ export default function NavBar() {
 	const [ categories, setCategories ] = useState([])
 	useEffect(() => {
 		getCategories().then(res => setCategories(res))
-	},[categories])
+	},[])
 
 	return <nav>
 		<Link className="brand" to="/">SocialStore</Link>

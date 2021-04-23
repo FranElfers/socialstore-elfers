@@ -14,3 +14,5 @@ Hecho por **Francisco Elfers**.
 * [Desafío 6 "Detalle de producto"](https://github.com/FranElfers/socialstore-elfers/tree/38fb4acd50fbcc8acb54f2962e2111c651b29315)
 * [Desafío 7 "Sincronizar el counter"](https://github.com/FranElfers/socialstore-elfers/tree/2d195fa3acf559dc488c5dce0032ee452124eb39)
 * [Desafío 8 "CartContext"](https://github.com/FranElfers/socialstore-elfers/tree/ae51c12066831fae59d8f340e73480bd6918b5f5)
+* [Desafío 9 "Cart View"](https://github.com/FranElfers/socialstore-elfers/tree/40f525785715ef4704eb5ca149f4fec13381ae9f)
+* [Desafío 10 "Item Collection"](https://github.com/FranElfers/socialstore-elfers/tree/4feec08948d05a459d0c6929e82f6257cf0f0c76)

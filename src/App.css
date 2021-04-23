@@ -46,6 +46,7 @@ button, .btn1, .btn2 {
 }
 
 button, .btn2 {
+  cursor: pointer;
   border: 2px solid transparent;
 }
 
