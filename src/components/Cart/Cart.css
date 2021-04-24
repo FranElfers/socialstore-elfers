@@ -10,6 +10,10 @@
 	margin: 10px 0;
 }
 
+.total span {
+	color: rgb(255, 153, 0);
+}
+
 .cart > div {
 	margin: 30px;
 }
@@ -19,11 +23,24 @@
 }
 
 .cart span {
+	white-space: nowrap;
+	text-align: left;
 	font-size: .9em;
 }
 
-.cart-product-buttons {
-	padding: 5px;
+.cart span.title {
+	white-space: normal;
+}
+
+.cart .data {
+	display: flex;
+	gap: 15px;
+	justify-content: space-between;
+	min-width: 40%;
+}
+
+.cart .data .price {
+	color: rgb(255, 153, 0);
 }
 
 .cart-product-buttons button {
@@ -78,3 +95,4 @@ form .field input {
 	border: 1px solid lightgrey;
 	color: white;
 }
+

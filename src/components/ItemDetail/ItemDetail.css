@@ -1,7 +1,4 @@
 .item-detail {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	width: 500px;
   max-width: 95%;
 }
@@ -12,6 +9,25 @@
 
 .item-detail p {
 	font-size: .9em
+}
+
+.item-detail .detail {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2em;
+	text-align: left;
+}
+
+.item-detail .info h3 {
+	margin-top: 0;
+}
+
+.item-detail .info * {
+	margin: .3em 0;
+}
+
+.item-detail .selection {
+	padding-top: 10px;
 }
 
 .item-detail .counter {

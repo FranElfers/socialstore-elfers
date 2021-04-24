@@ -5,15 +5,16 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import { getFirestore } from '../../firebase'
 import './Cart.css'
+import UserForm from './UserForm'
 
 export default function Cart() {
 	const { products, removeProducts, addItem, cartSize, clear } = React.useContext(CartContext)
+	const [ comprarButtonClass, setComprarButtonClass ] = React.useState('')
 	const [ user, setUser ] = React.useState({})
 	const history = useHistory()
 	const totalPrecio = products.reduce((acc,cur) => (cur.item.price * cur.quantity) + acc, 0)
 	
 	const generarOrden = () => {
-		if (!checkUser()) return alert('Datos de usuario incompletos')
 		const db = getFirestore()
 		let orderId = ''
 		
@@ -60,40 +61,22 @@ export default function Cart() {
 	}
 
 	// Lista de productos para el render
-	const listaDeProductos = products.map((product,i) => <div key={i}>
-		<img src={product.item.pictureUrl} alt={product.item.title} />
-		<span><Link to={"/item/" + product.item.id}>{product.item.title}</Link></span>
-		<span>{product.quantity}</span>
-		<span>$ {product.item.price}</span>
-		<div className="cart-product-buttons">
-			<button onClick={() => removeProducts(product.item.id, 1)}>-</button>
-			<button onClick={() => addItem(product.item, 1)}>+</button>
-			<button onClick={() => removeProducts(product.item.id, product.quantity)}>&times;</button>
+	const listaDeProductos = products.map(product => <div key={product.item.id}>
+		{/* <img src={product.item.pictureUrl} alt={product.item.title} /> */}
+		<span className="title"><Link to={"/item/" + product.item.id}>{product.item.title}</Link></span>
+
+		<div className="data">
+
+			<span>&times; {product.quantity}</span>
+			<span className="price">$ {product.item.price}</span>
+			<div className="cart-product-buttons">
+				<button onClick={() => removeProducts(product.item.id, 1)}>-</button>
+				<button onClick={() => addItem(product.item, 1)}>+</button>
+				<button onClick={() => removeProducts(product.item.id, product.quantity)}>&times;</button>
+			</div>
 		</div>
 	</div> )
 
-
-	// Datos del formulario
-	const nameRef = React.useRef()
-	const phoneRef = React.useRef()
-	const emailRef = React.useRef()
-	const [ comprarButtonClass, setComprarButtonClass ] = React.useState('')
-	const checkUser = () => {
-		const data = {
-			name: nameRef.current.value,
-			phone: phoneRef.current.value,
-			email: emailRef.current.value,
-		}
-		setUser(data)
-
-		// Mi forma medio extraña para comprobar si los datos estan completos
-		return Object.values(data).filter(e => e === '').length === 0
-	}
-
-	const handleChange = () => {
-		setComprarButtonClass(checkUser() ? 'active' : '')
-	}
-	
 
 	// Formulario y boton para comprar para el render
 	const formularioDeCompra = <>
@@ -105,20 +88,7 @@ export default function Cart() {
 			</span>
 		</div>
 		<div className="total" style={{height:'auto'}}>
-			<form target="_self">
-				<div className="field">
-					<label htmlFor="name">Nombre</label>
-					<input type="text" id="name" ref={nameRef} onChange={handleChange} />
-				</div>
-				<div className="field">
-					<label htmlFor="phone">Numero</label>
-					<input type="tel" id="phone" ref={phoneRef} onChange={handleChange} />
-				</div>
-				<div className="field">
-					<label htmlFor="email">E-mail</label>
-					<input type="email" id="email" ref={emailRef} onChange={handleChange} />
-				</div>
-			</form>
+			<UserForm setComprarButtonClass={setComprarButtonClass} setUser={setUser} />
 		</div>
 		<div className="total">
 			<button 
