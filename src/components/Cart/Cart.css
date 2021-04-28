@@ -1,4 +1,4 @@
-.cart > div, .total {
+.🛒 > div, .total {
 	display: flex;
 	justify-content: space-between;
 	height: 50px;
@@ -14,33 +14,39 @@
 	color: rgb(255, 153, 0);
 }
 
-.cart > div {
-	margin: 30px;
+.🛒 > div {
+	margin-bottom: 50px;
 }
 
-.cart img {
+.🛒 img {
 	width: 80px;	
 }
 
-.cart span {
+.🛒 span {
 	white-space: nowrap;
 	text-align: left;
 	font-size: .9em;
 }
 
-.cart span.title {
+.🛒 span.title {
 	white-space: normal;
 }
 
-.cart .data {
+.🛒 .data {
 	display: flex;
-	gap: 15px;
+	/* gap: 15px; */
+	flex-direction: column;
 	justify-content: space-between;
-	min-width: 40%;
+	/* min-width: 40%; */
 }
 
-.cart .data .price {
+.🛒 .data .info span.price {
+	margin-left: 10px;
 	color: rgb(255, 153, 0);
+}
+
+.cart-product-buttons {
+	text-align: right;
 }
 
 .cart-product-buttons button {

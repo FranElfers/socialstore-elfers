@@ -1,6 +1,6 @@
 .counter {
   align-self: flex-end;
-  width: 100px;
+  width: 140px;
   border-radius: 5px;
   color: #fff;
 }
@@ -10,11 +10,17 @@
   justify-content: space-between;
 }
 
+.counter div > button {
+  font-size: 1em;
+  font-weight: 600;
+}
+
 .counter span {
   line-height: 2.4
 }
 
 .counter button {
+  width: 40px;
   color: #fff;
   background: transparent;
   cursor: pointer;
@@ -24,4 +30,9 @@
   width: 100%;
   font-family: Consolas;
   /* background: #fff2; */
+}
+
+.counter button:disabled {
+  color: #666;
+  cursor: default;
 }

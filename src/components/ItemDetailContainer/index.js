@@ -5,12 +5,14 @@ import ItemDetail from "../ItemDetail";
 
 export default function ItemDetailContainer() {
 	const [ item, setItem ] = useState({});
+	const [ loading, setLoading ] = useState(true)
 	const { id } = useParams();
 	
 	useEffect(() => {
 		getProductById(id)
 			.then(res => {
 				setItem({id: res.id, ...res.data()})
+				setLoading(false)
 			})
 			.catch(err => {
 				setItem(undefined)
@@ -19,5 +21,5 @@ export default function ItemDetailContainer() {
 
 	if (item === undefined) return <p>Este producto no existe. <Link to="/"><u>Volver</u></Link> </p>
 
-	return <ItemDetail {...item} />
+	return <ItemDetail loading={loading} {...item} />
 }

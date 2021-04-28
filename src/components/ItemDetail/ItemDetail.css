@@ -13,9 +13,11 @@
 
 .item-detail .detail {
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
 	margin-top: 2em;
-	text-align: left;
+	text-align: center;
 }
 
 .item-detail .info h3 {
@@ -26,10 +28,11 @@
 	margin: .3em 0;
 }
 
-.item-detail .selection {
-	padding-top: 10px;
-}
-
 .item-detail .counter {
 	align-self: auto
+}
+
+.item-detail #cancel {
+	color: white;
+	background: transparent;
 }

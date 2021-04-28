@@ -9,7 +9,7 @@ export default function Success() {
 	// Limpia el carrito al terminar de renderizar el componente
 	React.useEffect(() => clear)
 
-	return <div className="cart">
+	return <div className="🛒">
 		<h3>Compra exitosa!	<Link to="/" ><u>volver a inicio</u></Link></h3>
 		{ products.map((product,i) => <div key={i}>
 				<img src={product.item.pictureUrl} alt={product.item.title} />

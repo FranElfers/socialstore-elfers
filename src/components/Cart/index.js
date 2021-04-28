@@ -66,13 +66,14 @@ export default function Cart() {
 		<span className="title"><Link to={"/item/" + product.item.id}>{product.item.title}</Link></span>
 
 		<div className="data">
-
-			<span>&times; {product.quantity}</span>
-			<span className="price">$ {product.item.price}</span>
+			<div className="info">
+				<span>&times; {product.quantity}</span>
+				<span className="price">$ {product.item.price}</span>
+			</div>
 			<div className="cart-product-buttons">
-				<button onClick={() => removeProducts(product.item.id, 1)}>-</button>
-				<button onClick={() => addItem(product.item, 1)}>+</button>
-				<button onClick={() => removeProducts(product.item.id, product.quantity)}>&times;</button>
+				<button style={{background:'#880'}} title="Remover 1" onClick={() => removeProducts(product.item.id, 1)}>-</button>
+				<button style={{background:'#080'}} title="Agregar 1" onClick={() => addItem(product.item, 1)}>+</button>
+				<button style={{background:'#800'}} title="Quitar del carrito" onClick={() => removeProducts(product.item.id, product.quantity)}>&times;</button>
 			</div>
 		</div>
 	</div> )
@@ -102,7 +103,7 @@ export default function Cart() {
 
 	// Render
 	return <>
-		<div className="cart">
+		<div className="🛒">
 			{ cartSize > 0 ? listaDeProductos : <Link to="/" >No hay productos, <u>volver a inicio</u></Link> }
 		</div>
 		{cartSize > 0 && formularioDeCompra }

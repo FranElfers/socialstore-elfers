@@ -1,16 +1,23 @@
 import React, { useRef } from 'react'
 
 export default function UserForm({setComprarButtonClass, setUser}) {
-	const nameRef = useRef()
-	const lastNameRef = useRef()
-	const phoneRef = useRef()
-	const emailRef = useRef()
+	const nameRef = {ref: useRef(), id: 'name', title: 'Nombre', type: 'text'}
+	const lastNameRef = {ref: useRef(), id: 'lastName', title: 'Apellido', type: 'text'}
+	const phoneRef = {ref: useRef(), id: 'phone', title: 'Numero', type: 'phone'}
+	const emailRef = {ref: useRef(), id: 'email', title: 'E-mail', type: 'email'}
+	const email2Ref = {ref: useRef(), id: 'email2', title: 'Confirmar E-mail', type: 'email'}
+
+	const fields = [nameRef,lastNameRef,phoneRef,emailRef,email2Ref]
+
 	const checkUser = () => {
+		// Email confirmado ?
+		if (emailRef.ref.current.value !== email2Ref.ref.current.value) return false
+
 		const data = {
-			name: nameRef.current.value,
-			lastName: lastNameRef.current.value,
-			phone: phoneRef.current.value,
-			email: emailRef.current.value,
+			name: nameRef.ref.current.value,
+			lastName: lastNameRef.ref.current.value,
+			phone: phoneRef.ref.current.value,
+			email: emailRef.ref.current.value
 		}
 		setUser(data)
 		
@@ -23,21 +30,11 @@ export default function UserForm({setComprarButtonClass, setUser}) {
 	}
 
 	return <form target="_self">
-		<div className="field">
-			<label htmlFor="name">Nombre</label>
-			<input type="text" id="name" ref={nameRef} onChange={handleChange} />
-		</div>
-		<div className="field">
-			<label htmlFor="lastName">Apellido</label>
-			<input type="text" id="lastName" ref={lastNameRef} onChange={handleChange} />
-		</div>
-		<div className="field">
-			<label htmlFor="phone">Numero</label>
-			<input type="tel" id="phone" ref={phoneRef} onChange={handleChange} />
-		</div>
-		<div className="field">
-			<label htmlFor="email">E-mail</label>
-			<input type="email" id="email" ref={emailRef} onChange={handleChange} />
-		</div>
+		{fields.map(({ref, id, title, type}) => 
+			<div className="field">
+				<label htmlFor={id}>{title}</label>
+				<input type={type} id={id} ref={ref} onChange={handleChange} />
+			</div>
+		)}
 	</form>
 }
