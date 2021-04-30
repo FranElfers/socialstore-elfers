@@ -38,9 +38,7 @@ Component Relationship
 
 En las clases, el profesor y los tutores nos recomendaron acomodar los componentes en carpetas para organizarse mejor. Sin embargo, **personalmente** es mucho más cómodo tenerlos prolijos que tenerlos organizados.
 
-![carpetasantes](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7b3dddbe-c227-406c-a50e-e1561404da0c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210430%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210430T193520Z&X-Amz-Expires=86400&X-Amz-Signature=473eff313601323bbe5a39509537b631c140e3b63a45e8900198a93302a63396&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
-
-![carpetasdespues](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/236e20df-1914-463f-8aef-48e094877a11/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210430%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210430T193524Z&X-Amz-Expires=86400&X-Amz-Signature=df49f10b5388baa979a31a569c635af6635de5b2caff6f53fb16e17bbc5052c9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
+![carpetasantes](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7b3dddbe-c227-406c-a50e-e1561404da0c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210430%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210430T193520Z&X-Amz-Expires=86400&X-Amz-Signature=473eff313601323bbe5a39509537b631c140e3b63a45e8900198a93302a63396&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22) ![carpetasdespues](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/236e20df-1914-463f-8aef-48e094877a11/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210430%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210430T193524Z&X-Amz-Expires=86400&X-Amz-Signature=df49f10b5388baa979a31a569c635af6635de5b2caff6f53fb16e17bbc5052c9&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 ---
 
