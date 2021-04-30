@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ItemCount from '../ItemCount'
-import CartContext from '../../context/CartContext'
-import './ItemDetail.css'
+import ItemCount from './ItemCount'
+import CartContext from '../context/CartContext'
+import './styles/ItemDetail.css'
 
 export default function ItemDetail(item) {
 	const [ selectedCount, setSelectedCount ] = React.useState(0)

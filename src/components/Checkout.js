@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
-import CartContext from '../../context/CartContext'
+import CartContext from '../context/CartContext'
 
 export default function Success() {
 	const { products, clear } = React.useContext(CartContext)

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-export default function UserForm({setComprarButtonClass, setUser}) {
+export default function UserForm({setButtonClass, setUser, preFields = [], preTitle = ''}) {
 	const nameRef = {ref: useRef(), id: 'name', title: 'Nombre', type: 'text'}
 	const lastNameRef = {ref: useRef(), id: 'lastName', title: 'Apellido', type: 'text'}
 	const phoneRef = {ref: useRef(), id: 'phone', title: 'Numero', type: 'phone'}
@@ -8,6 +8,9 @@ export default function UserForm({setComprarButtonClass, setUser}) {
 	const email2Ref = {ref: useRef(), id: 'email2', title: 'Confirmar E-mail', type: 'email'}
 
 	const fields = [nameRef,lastNameRef,phoneRef,emailRef,email2Ref]
+
+	// Mi forma medio extraña para comprobar si los datos estan completos
+	const completeRefList = (list = []) => list.reduce((acc,cur) => acc && cur.ref.current.value.length > 0,true)
 
 	const checkUser = () => {
 		// Email confirmado ?
@@ -20,21 +23,29 @@ export default function UserForm({setComprarButtonClass, setUser}) {
 			email: emailRef.ref.current.value
 		}
 		setUser(data)
-		
-		// Mi forma medio extraña para comprobar si los datos estan completos
-		return Object.values(data).filter(e => e === '').length === 0
+
+		return completeRefList(fields) && completeRefList(preFields)
 	}
+	//https://assets.stickpng.com/images/580b57fcd9996e24bc43c240.png
 	
 	const handleChange = () => {
-		setComprarButtonClass(checkUser() ? 'active' : '')
+		setButtonClass(checkUser() ? 'active' : '')
 	}
 
+
+	const fieldTemplate = ({ref, id, title, type}) => <div key={id} className="field">
+		<label htmlFor={id}>{title}</label>
+		<input type={type} id={id} ref={ref} onChange={handleChange} />
+	</div>
+
+
 	return <form target="_self">
-		{fields.map(({ref, id, title, type}) => 
-			<div className="field">
-				<label htmlFor={id}>{title}</label>
-				<input type={type} id={id} ref={ref} onChange={handleChange} />
-			</div>
-		)}
+
+		{preTitle && <h3>{preTitle}</h3>}
+		{preFields && preFields.map(field => fieldTemplate(field))}
+
+		<h3>Datos de usuario</h3>
+		{fields.map(field => fieldTemplate(field))}
+
 	</form>
 }

@@ -9,7 +9,7 @@ const collectSingleProduct = id => firestore.collection('products').doc(id).get(
 export function getCategory(name) {
 	return collectCategories.where('name','==',name).get()
 	.then(res => {
-		if (res) return res
+		if (res.docs[0]) return res.docs[0]
 		throw new Error(`No '${name}' category.`)
 	})
 }

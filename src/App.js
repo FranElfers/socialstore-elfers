@@ -1,12 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css';
-import NavBar from './components/NavBar/';
+import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart'
 import { Provider } from './context/CartContext';
 import Checkout from './components/Checkout';
+import LoadProduct from './components/LoadProduct';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
                 <Route path="/checkout/:id" >
                   <Checkout />
                 </Route>
+                <Route path="/loadproduct">
+                  <LoadProduct />
+                </Route>
                 <Route exact path="/">
                   <ItemListContainer />
                 </Route>
@@ -40,5 +44,3 @@ function App() {
 }
 
 export default App;
-
-// En cart te recomiendo que para eliminar el item comprado podria mostrarse una " x " o podrias incluso un contador para agregar o restar. Saludos!

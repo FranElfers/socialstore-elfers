@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import CartContext from '../../context/CartContext'
+import CartContext from './../context/CartContext'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import { getFirestore } from '../../firebase'
-import './Cart.css'
+import { getFirestore } from './../firebase'
+import './styles/Cart.css'
 import UserForm from './UserForm'
 
 export default function Cart() {
@@ -82,14 +82,14 @@ export default function Cart() {
 	// Formulario y boton para comprar para el render
 	const formularioDeCompra = <>
 		<div className="total">
-			<button onClick={() => clear()}>Borrar carrito</button>
+			<button onClick={clear}>Borrar carrito</button>
 			<span>
 				$ &nbsp;
 				{totalPrecio}
 			</span>
 		</div>
 		<div className="total" style={{height:'auto'}}>
-			<UserForm setComprarButtonClass={setComprarButtonClass} setUser={setUser} />
+			<UserForm setButtonClass={setComprarButtonClass} setUser={setUser} />
 		</div>
 		<div className="total">
 			<button 
